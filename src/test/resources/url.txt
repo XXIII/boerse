@@ -1,0 +1,26 @@
+https://www.google.com/finance/historical?q=FRA%3ADTE&startdate=Jan+1%2C+2000&enddate=Apr+27%2C+2013
+
+
+FRA - Fankfurt
+
+DAX 
+FRA:ADS - Adidas
+FRA:ALV - Allianz
+FRA:BAS - BASF
+FRA:BAYN - Bayer
+FRA:BMW - BMW
+FRA:CBK - Commerzbank
+FRA:DAI - Daimler
+FRA:DBK - Deutsche Bank
+FRA:DTE - Deutsche Telekom
+FRA:FME - Fresenius Medical Care
+ETR:HEN - Henkel
+FRA:LIN - Linde
+FRA:RWE - RWE
+FRA:RWE - SAP
+FRA:RWE - Siemens
+FRA:TKA - Thyssen Krupp
+FRA:VOW - Volkswagen
+
+
+
