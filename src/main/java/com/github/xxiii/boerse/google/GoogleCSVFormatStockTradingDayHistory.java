@@ -5,26 +5,25 @@ import com.github.xxiii.boerse.trading.StockTradingDay;
 import com.github.xxiii.boerse.trading.StockTradingDayHistory;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StockTradingDayHistoryGoogleCSVFormat extends StockTradingDayHistory {
+public class GoogleCSVFormatStockTradingDayHistory extends StockTradingDayHistory {
 
-    private final File csvFile;
-    private final Stock stock;
+    private final InputStream csvInputStream;
 
-    public StockTradingDayHistoryGoogleCSVFormat(Stock stock, File csvFile) {
-        this.stock = stock;
-        this.csvFile = csvFile;
+    public GoogleCSVFormatStockTradingDayHistory(Stock stock, InputStream csvInputStream) {
+        super(stock);
+        this.csvInputStream = csvInputStream;
     }
 
     @Override
     protected List<StockTradingDay> loadTradingDays() {
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(csvInputStream))) {
             List<StockTradingDay> result = new ArrayList<>();
             boolean firstLine = true;
             String line;
@@ -34,7 +33,7 @@ public class StockTradingDayHistoryGoogleCSVFormat extends StockTradingDayHistor
                     firstLine = false;
                     continue;
                 }
-                result.add(new StockTradingDayGoogleCSVFormat(stock, line.split(",")));
+                result.add(new GoogleCSVFormatStockTradingDay(getStock(), line.split(",")));
             }
             return result;
         } catch (IOException e) {

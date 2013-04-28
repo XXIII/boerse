@@ -7,8 +7,9 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
-public class StockTradingDayGoogleCSVFormat extends StockTradingDay {
+public class GoogleCSVFormatStockTradingDay extends StockTradingDay {
 
 
     private static final int POSITION_DATE = 0;
@@ -17,19 +18,26 @@ public class StockTradingDayGoogleCSVFormat extends StockTradingDay {
     private static final int POSITION_LOW = 3;
     private static final int POSITION_CLOSE = 4;
 
-    public StockTradingDayGoogleCSVFormat(Stock stock, String[] csvLineAsArray) {
+    public GoogleCSVFormatStockTradingDay(Stock stock, String[] csvLineAsArray) {
         super(parseDate(csvLineAsArray[POSITION_DATE]), stock, parse(csvLineAsArray[POSITION_OPEN]), parse(csvLineAsArray[POSITION_HIGH]), parse(csvLineAsArray[POSITION_LOW]), parse(csvLineAsArray[POSITION_CLOSE]));
     }
 
     protected static Date parseDate(String s) {
         try {
-            return new SimpleDateFormat("d-MMM-yy").parse(s);
+            return new SimpleDateFormat("d-MMM-yy", Locale.ENGLISH).parse(s);
         } catch (ParseException e) {
             throw new RuntimeException("Error, parsing Date: '" + s + "'", e);
         }
     }
 
     protected static BigDecimal parse(String s) {
-        return new BigDecimal(s);
+        if ("-".equals(s)) {
+            return BigDecimal.ZERO;
+        }
+        try {
+            return new BigDecimal(s);
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("error parsing: '" + s + "'", e);
+        }
     }
 }
