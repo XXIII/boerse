@@ -3,8 +3,10 @@ package com.github.xxiii.boerse.google;
 import com.github.kevinsawicki.http.HttpRequest;
 import com.github.xxiii.boerse.Stock;
 import com.github.xxiii.boerse.StockExchange;
+import org.joda.time.DateTime;
 
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,8 +27,10 @@ public class GoogleFinanceDownload {
     }
 
     public void download(OutputStream os) {
-        HttpRequest
-                .get("https://www.google.com/finance/historical", createParamMap(), true)
+        HttpRequest httpRequest = HttpRequest
+                .get("https://www.google.com/finance/historical", createParamMap(), false);
+        System.out.println(httpRequest.url());
+        httpRequest
                 .receive(os);
     }
 
@@ -34,6 +38,16 @@ public class GoogleFinanceDownload {
         Map<String, String> result = new HashMap<>();
         result.put("q", stockExchange.getGoogleFinanceCode() + ":" + stock.getGoogleFinanceCode());
         result.put("output", fileFormat.getGoogleFormatName());
+        result.put("startdate", formatDate(startDate));
+        result.put("enddate", formatDate(endDate));
         return result;
+    }
+
+    protected String formatDate(Date date) {
+        return new SimpleDateFormat("MMM+d,+yyyy").format(date);
+    }
+
+    public static Date createDate(int year, int month, int day) {
+        return new DateTime(year, month, day, 0, 0, 0).toDate();
     }
 }

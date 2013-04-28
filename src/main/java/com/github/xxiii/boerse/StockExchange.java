@@ -1,12 +1,16 @@
 package com.github.xxiii.boerse;
 
 public enum StockExchange {
-    FRANKFURT {
-        @Override
-        public String getGoogleFinanceCode() {
-            return "FRA";
-        }
-    };
+    FRANKFURT("FRA"),
+    XETRA("ETR");
 
-    public abstract String getGoogleFinanceCode();
+    private final String googleFinanceCode;
+
+    private StockExchange(String googleFinanceCode) {
+        this.googleFinanceCode = googleFinanceCode;
+    }
+
+    public String getGoogleFinanceCode() {
+        return googleFinanceCode;
+    }
 }
