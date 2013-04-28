@@ -1,7 +1,7 @@
 package com.github.xxiii.boerse.google;
 
 import com.github.kevinsawicki.http.HttpRequest;
-import com.github.xxiii.boerse.FinancialMarket;
+import com.github.xxiii.boerse.stock.FinancialMarket;
 import com.github.xxiii.boerse.stock.Stock;
 import org.joda.time.DateTime;
 

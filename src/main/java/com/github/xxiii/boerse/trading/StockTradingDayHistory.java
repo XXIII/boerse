@@ -2,7 +2,7 @@ package com.github.xxiii.boerse.trading;
 
 import java.util.List;
 
-public abstract class StockTradingDayHistorie {
+public abstract class StockTradingDayHistory {
 
     private List<StockTradingDay> stockTradingDays;
 

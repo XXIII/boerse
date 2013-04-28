@@ -1,4 +1,4 @@
-package com.github.xxiii.boerse;
+package com.github.xxiii.boerse.stock;
 
 public enum FinancialMarket {
     FRANKFURT("FRA"),

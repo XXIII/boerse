@@ -2,6 +2,7 @@ package com.github.xxiii.boerse;
 
 import com.github.xxiii.boerse.google.GoogleFileFormat;
 import com.github.xxiii.boerse.google.GoogleFinanceDownload;
+import com.github.xxiii.boerse.stock.FinancialMarket;
 import com.github.xxiii.boerse.stock.Stock;
 import com.github.xxiii.boerse.stock.StockExchange;
 
