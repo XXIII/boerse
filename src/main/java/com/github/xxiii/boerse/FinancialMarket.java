@@ -1,12 +1,12 @@
 package com.github.xxiii.boerse;
 
-public enum StockExchange {
+public enum FinancialMarket {
     FRANKFURT("FRA"),
     XETRA("ETR");
 
     private final String googleFinanceCode;
 
-    private StockExchange(String googleFinanceCode) {
+    private FinancialMarket(String googleFinanceCode) {
         this.googleFinanceCode = googleFinanceCode;
     }
 

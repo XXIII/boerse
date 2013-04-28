@@ -1,8 +1,8 @@
 package com.github.xxiii.boerse.google;
 
 import com.github.kevinsawicki.http.HttpRequest;
-import com.github.xxiii.boerse.Stock;
-import com.github.xxiii.boerse.StockExchange;
+import com.github.xxiii.boerse.FinancialMarket;
+import com.github.xxiii.boerse.stock.Stock;
 import org.joda.time.DateTime;
 
 import java.io.OutputStream;
@@ -14,14 +14,14 @@ import java.util.Map;
 public class GoogleFinanceDownload {
     private final Date startDate;
     private final Date endDate;
-    private final StockExchange stockExchange;
+    private final FinancialMarket financialMarket;
     private final Stock stock;
     private final GoogleFileFormat fileFormat;
 
-    public GoogleFinanceDownload(Date startDate, Date endDate, StockExchange stockExchange, Stock stock, GoogleFileFormat fileFormat) {
+    public GoogleFinanceDownload(Date startDate, Date endDate, FinancialMarket financialMarket, Stock stock, GoogleFileFormat fileFormat) {
         this.startDate = startDate;
         this.endDate = endDate;
-        this.stockExchange = stockExchange;
+        this.financialMarket = financialMarket;
         this.stock = stock;
         this.fileFormat = fileFormat;
     }
@@ -36,7 +36,7 @@ public class GoogleFinanceDownload {
 
     private Map<String, String> createParamMap() {
         Map<String, String> result = new HashMap<>();
-        result.put("q", stockExchange.getGoogleFinanceCode() + ":" + stock.getGoogleFinanceCode());
+        result.put("q", financialMarket.getGoogleFinanceCode() + ":" + stock.getGoogleFinanceCode());
         result.put("output", fileFormat.getGoogleFormatName());
         result.put("startdate", formatDate(startDate));
         result.put("enddate", formatDate(endDate));
