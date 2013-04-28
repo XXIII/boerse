@@ -1,8 +1,7 @@
 package com.github.xxiii.boerse.stock;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import static com.github.xxiii.boerse.stock.Stock.*;
 
@@ -27,13 +26,13 @@ public enum StockExchange {
             THYSSEN_KRUPP,
             VOLKSWAGEN
     );
-    private final Set<Stock> stocks;
+    private final List<Stock> stocks;
 
     private StockExchange(Stock... stocks) {
-        this.stocks = new HashSet<>(Arrays.asList(stocks));
+        this.stocks = Arrays.asList(stocks);
     }
 
-    public Set<Stock> getStocks() {
+    public List<Stock> getStocks() {
         return stocks;
     }
 

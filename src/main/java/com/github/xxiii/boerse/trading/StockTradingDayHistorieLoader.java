@@ -16,10 +16,11 @@ public abstract class StockTradingDayHistorieLoader {
         return stockTradingDayHistories;
     }
 
+
     private List<StockTradingDayHistory> loadStockTradingDayHistories() {
         List<StockTradingDayHistory> result = new ArrayList<>();
         for (Stock stock : getStocksToLoad()) {
-            result.add(createHistorieForStock(stock));
+            result.add(createHistoryForStock(stock));
 
         }
         return result;
@@ -27,7 +28,7 @@ public abstract class StockTradingDayHistorieLoader {
 
     }
 
-    protected abstract StockTradingDayHistory createHistorieForStock(Stock stock);
+    protected abstract StockTradingDayHistory createHistoryForStock(Stock stock);
 
     protected abstract List<Stock> getStocksToLoad();
 }

@@ -5,7 +5,7 @@ import com.github.xxiii.boerse.stock.Stock;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class StockTradingDay extends TradingDay {
+public class StockTradingDay extends TradingDay<StockTradingDay> {
 
     private final Stock stock;
     private final BigDecimal open;
