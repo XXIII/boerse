@@ -1,9 +1,9 @@
-package com.saugstation.boerse;
+package com.github.xxiii.boerse;
 
-import com.saugstation.boerse.google.Company;
-import com.saugstation.boerse.google.GoogleFileFormat;
-import com.saugstation.boerse.google.GoogleFinanceDownload;
-import com.saugstation.boerse.google.StockExchange;
+import com.github.xxiii.boerse.google.Company;
+import com.github.xxiii.boerse.google.GoogleFileFormat;
+import com.github.xxiii.boerse.google.GoogleFinanceDownload;
+import com.github.xxiii.boerse.google.StockExchange;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

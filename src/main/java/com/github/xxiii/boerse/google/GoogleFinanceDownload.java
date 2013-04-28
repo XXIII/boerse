@@ -1,4 +1,4 @@
-package com.saugstation.boerse.google;
+package com.github.xxiii.boerse.google;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
