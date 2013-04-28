@@ -1,6 +1,6 @@
-package com.github.xxiii.boerse.google;
+package com.github.xxiii.boerse;
 
-public enum Company {
+public enum Stock {
 
 
     ADIDAS("ADS"),
@@ -22,7 +22,7 @@ public enum Company {
     VOLKSWAGEN("VOW");
     private final String googleFinanceCode;
 
-    Company(String googleFinanceCode) {
+    Stock(String googleFinanceCode) {
         this.googleFinanceCode = googleFinanceCode;
     }
 

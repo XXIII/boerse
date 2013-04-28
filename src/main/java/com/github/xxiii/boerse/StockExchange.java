@@ -1,4 +1,4 @@
-package com.github.xxiii.boerse.google;
+package com.github.xxiii.boerse;
 
 public enum StockExchange {
     FRANKFURT {
