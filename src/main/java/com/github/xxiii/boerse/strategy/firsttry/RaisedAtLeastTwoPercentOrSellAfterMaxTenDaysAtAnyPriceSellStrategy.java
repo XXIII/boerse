@@ -17,20 +17,20 @@ public class RaisedAtLeastTwoPercentOrSellAfterMaxTenDaysAtAnyPriceSellStrategy 
     private static final int HOLD_MAX_DAYS = 10;
 
     @Override
-    public SellRecommendation sell(StockTradingDay today, StockTradingDay dayOfBuy, BigDecimal boughtAt) {
+    public SellRecommendation sell(StockTradingDay today, StockTradingDay dayOfPurchase, BigDecimal boughtAt) {
         if (isRaisedAtLeastMinimum(boughtAt, today.getOpenOrCloseMaximum())) {
             return SellRecommendation.sell(today.getOpenOrCloseMaximum());
         }
 
-        if (isMaximumHoldDaysReached(today, dayOfBuy)) {
+        if (isMaximumHoldDaysReached(today, dayOfPurchase)) {
             return SellRecommendation.sell(today.getOpenOrCloseMaximum());
         }
 
         return SellRecommendation.HOLD;
     }
 
-    private boolean isMaximumHoldDaysReached(StockTradingDay today, StockTradingDay dayOfBuy) {
-        return today.getNumberOfDaysAfter(dayOfBuy) >= holdMaxDays();
+    private boolean isMaximumHoldDaysReached(StockTradingDay today, StockTradingDay dayOfPurchase) {
+        return today.getNumberOfDaysAfter(dayOfPurchase) >= holdMaxDays();
     }
 
     private int holdMaxDays() {

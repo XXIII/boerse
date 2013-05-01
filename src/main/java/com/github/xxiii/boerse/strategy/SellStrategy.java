@@ -6,5 +6,5 @@ import java.math.BigDecimal;
 
 public interface SellStrategy {
 
-    SellRecommendation sell(StockTradingDay today, StockTradingDay dayOfBuy, BigDecimal boughtAt);
+    SellRecommendation sell(StockTradingDay today, StockTradingDay dayOfPurchase, BigDecimal boughtAt);
 }
