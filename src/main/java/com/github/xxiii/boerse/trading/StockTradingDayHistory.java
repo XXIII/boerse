@@ -45,7 +45,7 @@ public abstract class StockTradingDayHistory {
     }
 
     private boolean isNull(BigDecimal value) {
-        return value == null || value.doubleValue() == 0d;
+        return value == null || value.signum() == 0;
     }
 
     protected abstract List<StockTradingDay> loadTradingDays();

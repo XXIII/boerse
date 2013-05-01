@@ -41,4 +41,12 @@ public class StockTradingDay extends TradingDay<StockTradingDay> {
     public BigDecimal getClose() {
         return close;
     }
+
+    public BigDecimal getChangeInPercentageThisDayOpenYesterdayClose() {
+        if (getPreviousDay() == null) {
+            return null;
+        }
+
+        return getOpen().divide(getPreviousDay().getClose()).subtract(BigDecimal.ONE);
+    }
 }
