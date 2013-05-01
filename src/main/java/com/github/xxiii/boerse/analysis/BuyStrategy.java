@@ -4,5 +4,5 @@ import com.github.xxiii.boerse.trading.StockTradingDay;
 
 public interface BuyStrategy {
 
-    BuyRecommendation buy(StockTradingDay stockTradingDay);
+    BuyRecommendation buy(StockTradingDay today);
 }

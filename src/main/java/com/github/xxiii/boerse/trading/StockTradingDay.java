@@ -50,4 +50,38 @@ public class StockTradingDay extends TradingDay<StockTradingDay> {
         }
         return differenceInPercent(getPreviousDay().getClose(), getOpen());
     }
+
+    public BigDecimal getOpenOrCloseMaximum() {
+        if (getOpen().compareTo(getClose()) > 0) {
+            return getOpen();
+        }
+        return getClose();
+    }
+
+    public int getNumberOfDaysAfter(StockTradingDay other) {
+        if (this.equals(other)) {
+            return 0;
+        }
+        return 1 + getPreviousDay().getNumberOfDaysAfter(other);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof StockTradingDay)) return false;
+        if (!super.equals(o)) return false;
+
+        StockTradingDay that = (StockTradingDay) o;
+
+        if (stock != that.stock) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + stock.hashCode();
+        return result;
+    }
 }
