@@ -1,5 +1,6 @@
 package com.github.xxiii.boerse.analysis.firsttry;
 
+import com.github.xxiii.boerse.strategy.firsttry.RaisedAtLeastTwoPercentOrSellAfterMaxTenDaysAtAnyPriceSellStrategy;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

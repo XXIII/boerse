@@ -1,7 +1,7 @@
-package com.github.xxiii.boerse.analysis.firsttry;
+package com.github.xxiii.boerse.strategy.firsttry;
 
-import com.github.xxiii.boerse.analysis.BuyRecommendation;
-import com.github.xxiii.boerse.analysis.BuyStrategy;
+import com.github.xxiii.boerse.strategy.BuyRecommendation;
+import com.github.xxiii.boerse.strategy.BuyStrategy;
 import com.github.xxiii.boerse.trading.StockTradingDay;
 
 import java.math.BigDecimal;

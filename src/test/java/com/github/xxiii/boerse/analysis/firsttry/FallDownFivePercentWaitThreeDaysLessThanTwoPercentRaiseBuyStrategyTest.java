@@ -1,5 +1,6 @@
 package com.github.xxiii.boerse.analysis.firsttry;
 
+import com.github.xxiii.boerse.strategy.firsttry.FallDownFivePercentWaitThreeDaysLessThanTwoPercentRaiseBuyStrategy;
 import com.github.xxiii.boerse.trading.StockTradingDay;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

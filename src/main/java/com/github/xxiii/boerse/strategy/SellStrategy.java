@@ -1,4 +1,4 @@
-package com.github.xxiii.boerse.analysis;
+package com.github.xxiii.boerse.strategy;
 
 import com.github.xxiii.boerse.trading.StockTradingDay;
 

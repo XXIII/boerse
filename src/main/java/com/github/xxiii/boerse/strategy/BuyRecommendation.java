@@ -1,4 +1,4 @@
-package com.github.xxiii.boerse.analysis;
+package com.github.xxiii.boerse.strategy;
 
 import java.math.BigDecimal;
 
