@@ -15,19 +15,19 @@ public class StockTradingDayTest {
     @Test
     public void testGetChangeInPercentageThisDayOpenYesterdayClose() throws Exception {
         whenThisDayOpen("10");
-        whenYesterDayClose("10");
+        whenYesterdayClose("10");
         assertChangeInPercentageThisDayOpenYesterdayCloseIs("0");
 
         whenThisDayOpen("10");
-        whenYesterDayClose("5");
+        whenYesterdayClose("5");
         assertChangeInPercentageThisDayOpenYesterdayCloseIs("1");
 
         whenThisDayOpen("5");
-        whenYesterDayClose("10");
+        whenYesterdayClose("10");
         assertChangeInPercentageThisDayOpenYesterdayCloseIs("-0.5");
 
         whenThisDayOpen("95");
-        whenYesterDayClose("100");
+        whenYesterdayClose("100");
         assertChangeInPercentageThisDayOpenYesterdayCloseIs("-0.05");
     }
 
@@ -35,7 +35,7 @@ public class StockTradingDayTest {
         assertEquals(thisDay.getChangeInPercentageThisDayOpenYesterdayClose(), new BigDecimal(change));
     }
 
-    private void whenYesterDayClose(String close) {
+    private void whenYesterdayClose(String close) {
         yesterday = new StockTradingDay(new Date(), null, null, null, null, new BigDecimal(close));
         thisDay.setPreviousDay(yesterday);
         yesterday.setNextDay(thisDay);

@@ -5,6 +5,8 @@ import com.github.xxiii.boerse.stock.Stock;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static com.github.xxiii.boerse.util.BigDecimalUtil.differenceInPercent;
+
 public class StockTradingDay extends TradingDay<StockTradingDay> {
 
     private final Stock stock;
@@ -46,7 +48,6 @@ public class StockTradingDay extends TradingDay<StockTradingDay> {
         if (getPreviousDay() == null) {
             return null;
         }
-
-        return getOpen().divide(getPreviousDay().getClose()).subtract(BigDecimal.ONE);
+        return differenceInPercent(getPreviousDay().getClose(), getOpen());
     }
 }
