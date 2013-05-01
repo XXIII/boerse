@@ -5,7 +5,7 @@ import com.github.xxiii.boerse.stock.StockExchange;
 
 import java.util.List;
 
-public class DaxGoogleCSVFileStockTradingDayHistorieLoader extends GoogleCSVFileStockTradingDayHistorieLoader {
+public class DaxGoogleCSVFileStockTradingDayHistoryLoader extends GoogleCSVFileStockTradingDayHistoryLoader {
     @Override
     protected List<Stock> getStocksToLoad() {
         return StockExchange.DAX.getStocks();

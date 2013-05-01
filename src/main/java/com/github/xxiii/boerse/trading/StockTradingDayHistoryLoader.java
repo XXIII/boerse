@@ -5,7 +5,7 @@ import com.github.xxiii.boerse.stock.Stock;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class StockTradingDayHistorieLoader {
+public abstract class StockTradingDayHistoryLoader {
 
     private List<StockTradingDayHistory> stockTradingDayHistories;
 
