@@ -1,22 +1,10 @@
 package com.github.xxiii.boerse.trader;
 
-import com.github.xxiii.boerse.strategy.BuyStrategy;
-import com.github.xxiii.boerse.strategy.SellStrategy;
+import com.github.xxiii.boerse.market.Market;
+import com.github.xxiii.boerse.trading.StockTradingDay;
 
-import java.math.BigDecimal;
+public interface Trader {
 
-public class Trader {
-
-    private final BuyStrategy buyStrategy;
-    private final SellStrategy sellStrategy;
-    private BigDecimal cash;
-    private Portfolio portfolio;
-
-    public Trader(BuyStrategy buyStrategy, SellStrategy sellStrategy, BigDecimal seedCapital) {
-        this.buyStrategy = buyStrategy;
-        this.sellStrategy = sellStrategy;
-        this.cash = seedCapital;
-    }
-
+    void trade(StockTradingDay stockTradingDay, Market market);
 
 }
